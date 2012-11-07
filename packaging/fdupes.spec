@@ -1,14 +1,3 @@
-#
-# spec file for package fdupes (Version 1.40)
-#
-# Copyright (c) 2007 SUSE LINUX Products GmbH, Nuernberg, Germany.
-# This file and all modifications and additions to the pristine
-# package are under the same license as the package itself.
-#
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
-#
-
-
 Name:           fdupes
 Version:        1.40
 Release:        42.66
@@ -18,8 +7,6 @@ Url:            http://premium.caribe.net/~adrian2/fdupes.html
 Group:          Productivity/Archiving/Compression
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        macros.fdupes
-Patch0:         %{name}.diff
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 FDUPES is a program for identifying or deleting duplicate files
@@ -27,7 +14,6 @@ residing within specified directories
 
 %prep
 %setup -q
-%patch0
 
 %build
 make
