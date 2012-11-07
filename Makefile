@@ -2,13 +2,13 @@
 # INSTALLDIR indicates directory where program is to be installed. 
 # Suggested values are "/usr/local/bin" or "/usr/bin".
 #
-INSTALLDIR = /usr/local/bin
+INSTALLDIR = /usr/bin
 
 #
 # MANPAGEDIR indicates directory where the fdupes man page is to be 
 # installed. Suggested values are "/usr/local/man" or "/usr/man".
 #
-MANPAGEDIR = /usr/local/man
+MANPAGEDIR = /usr/share/man
 
 #
 # VERSION determines the program's version number.
@@ -35,7 +35,7 @@ VERSION = "1.40"
 #####################################################################
 
 fdupes: fdupes.c md5/md5.c	
-	gcc fdupes.c md5/md5.c -Wall -o fdupes -DVERSION=\"$(VERSION)\" $(EXTERNAL_MD5) $(EXPERIMENTAL_RBTREE)
+	gcc fdupes.c md5/md5.c $(RPM_OPT_FLAGS) -o fdupes -DVERSION=\"$(VERSION)\" $(EXTERNAL_MD5) $(EXPERIMENTAL_RBTREE)
 
 install: fdupes
 	cp fdupes $(INSTALLDIR)
